@@ -14,10 +14,10 @@
 
 ## How to Run
 
-1.Clone โปรเจคนี้ลงเครื่อง
-2.เปิด Docker Desktop อยู่
-3.รันคำสั่ง docker-compose up -d เพื่อเปิดใช้งาน PostgreSQL
-4.กด Run โปรเจคผ่าน IntelliJ หรือใช้คำสั่ง ./mvnw spring-boot:run
+1. Clone โปรเจคนี้ลงเครื่อง
+2. เปิด Docker Desktop อยู่
+3. รันคำสั่ง docker-compose up -d เพื่อเปิดใช้งาน PostgreSQL
+4. กด Run โปรเจคผ่าน IntelliJ หรือใช้คำสั่ง ./mvnw spring-boot:run
 
 ## API Endpoints
 
