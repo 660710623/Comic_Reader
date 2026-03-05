@@ -24,9 +24,9 @@
 
 ## How to Use
 เมื่อโปรแกรมเริ่มทำงาน ให้สังเกตที่หน้าจอ Console/Terminal เพื่อกรอกข้อมูลตามลำดับดังนี้:
-1. Insert Comic title: กรอกชื่อการ์ตูน (เช่น Attack on Titan)
-2. Insert Comic author: กรอกชื่อผู้แต่ง (เช่น Hajime Isayama)
-3. Insert Chapter Title: กรอกชื่อตอน (เช่น ปีกแห่งเสรีภาพ)
+1. Insert Comic title: กรอกชื่อการ์ตูน (เช่น Vinland saga)
+2. Insert Comic author: กรอกชื่อผู้แต่ง (เช่น Makoto Yukimura)
+3. Insert Chapter Title: กรอกชื่อตอน (เช่น ที่ไหนสักแห่งที่ไม่ใช่ที่นี่)
 
 หลังจากกรอกเสร็จ ระบบจะทำการบันทึกลง PostgreSQL และแจ้งสถานะการทำงาน
 
