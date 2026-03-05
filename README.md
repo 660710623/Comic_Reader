@@ -1,5 +1,5 @@
 # Comic_Reader
-ระบบ Backend สำหรับจัดการข้อมูลการ์ตูนและตอน (Chapters) พัฒนาด้วย Java Spring Boot 
+ระบบ Backend สำหรับจัดการข้อมูลการ์ตูนและตอน พัฒนาด้วย Java Spring Boot 
 
 ## Tech Stack (เทคโนโลยีที่ใช้)
 Language: Java 21
