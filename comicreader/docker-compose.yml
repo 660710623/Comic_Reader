@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: comic-db-postgres
+    environment:
+      POSTGRES_USER: jomjuthamast
+      POSTGRES_PASSWORD: 753951a753951
+      POSTGRES_DB: comic_reader
+    ports:
+      - "5432:5432"
