@@ -2,6 +2,7 @@ package com.thanarat.comicreader.controller;
 
 import com.thanarat.comicreader.entity.Comic;
 import com.thanarat.comicreader.repository.ComicRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,10 +31,17 @@ public class ComicController {
                 .filter(c -> c.getTitle().toLowerCase().contains(title.toLowerCase()))
                 .toList();
     }
+
+
     @GetMapping("/{id}")
-    public ResponseEntity<Comic> getComicById(@PathVariable Long id) {
-        return comicRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());a
+    public ResponseEntity<?> getComicById(@PathVariable Long id) {
+        try {
+            Comic comic = comicRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("ไม่พบการ์ตูน ID: " + id));
+            return ResponseEntity.ok(comic);
+        } catch (RuntimeException e) {
+            // ดัก Exception แล้วส่งข้อความสวยๆ กลับไปพร้อมสถานะ 404 (Not Found)
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+            }
+        }
     }
-}
