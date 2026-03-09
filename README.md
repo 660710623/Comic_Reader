@@ -34,9 +34,12 @@ Interactive Text-Based Menu (CLI)
 
 ## API Endpoints
 
-- Method,Endpoint,Description,Status Code
-GET,/,ดึงรายชื่อการ์ตูนทั้งหมด,200 OK
-GET,/{id},ดึงข้อมูลการ์ตูนรายเรื่องตาม ID
-POST,/,เพิ่มการ์ตูนเรื่องใหม่ลงในระบบ
-PUT,/{id},แก้ไขชื่อเรื่องหรือชื่อผู้แต่ง
-DELETE,/{id},ลบการ์ตูน (รวมถึงทุกตอนอัตโนมัติ)
+### Comics Management Endpoints
+
+| Method | Endpoint | Description 
+| :--------- | :---------- | :---------------------------------- | 
+| **GET** | `/api/comics` | ดึงรายชื่อการ์ตูนทั้งหมด 
+| **GET** | `/api/comics/{id}` | ดึงข้อมูลการ์ตูนรายเรื่องตาม ID 
+| **POST** | `/api/comics` | เพิ่มการ์ตูนเรื่องใหม่ (รับ JSON Body) 
+| **PUT** | `/api/comics/{id}` | แก้ไขชื่อเรื่องหรือชื่อผู้แต่ง 
+| **DELETE** | `/api/comics/{id}` | ลบการ์ตูน (รวมถึงทุกตอนย่อยอัตโนมัติ) 
