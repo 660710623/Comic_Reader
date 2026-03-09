@@ -34,6 +34,9 @@ Interactive Text-Based Menu (CLI)
 
 ## API Endpoints
 
-- GET /api/comics - ดูรายชื่อการ์ตูนทั้งหมดและตอนที่มี
-- GET /api/comics/{id} - ดูรายละเอียดการ์ตูนรายเรื่อง
-- GET /api/comics/search?title=... - ค้นหาการ์ตูนตามชื่อเรื่อง
+- Method,Endpoint,Description,Status Code
+GET,/,ดึงรายชื่อการ์ตูนทั้งหมด,200 OK
+GET,/{id},ดึงข้อมูลการ์ตูนรายเรื่องตาม ID
+POST,/,เพิ่มการ์ตูนเรื่องใหม่ลงในระบบ
+PUT,/{id},แก้ไขชื่อเรื่องหรือชื่อผู้แต่ง
+DELETE,/{id},ลบการ์ตูน (รวมถึงทุกตอนอัตโนมัติ)
