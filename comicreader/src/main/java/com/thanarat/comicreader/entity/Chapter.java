@@ -16,9 +16,11 @@ public class Chapter {
     private Integer chapterNumber;
     private String title;
 
-    @ManyToOne // บอกว่าหลายตอน รวมอยู่ในเรื่องเดียว
+    @ManyToOne
     @JoinColumn(name = "comic_id")
     @JsonIgnore
     private Comic comic;
+
+
 }
 

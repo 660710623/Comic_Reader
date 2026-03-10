@@ -7,15 +7,15 @@ import java.util.List;
 
 @Entity
 @Table(name = "comics")
-@Data // ช่วยสร้าง getter/setter อัตโนมัติ (ต้องมี Lombok ในโปรเจค)
+@Data
 public class Comic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;      // ชื่อเรื่อง
-    private String author;     // ชื่อผู้แต่ง
+    private String title;
+    private String author;
 
     @OneToMany(mappedBy = "comic", cascade = CascadeType.ALL)
     private List<Chapter> chapters;

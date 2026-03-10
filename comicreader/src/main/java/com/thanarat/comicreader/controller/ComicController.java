@@ -2,6 +2,7 @@ package com.thanarat.comicreader.controller;
 
 import com.thanarat.comicreader.entity.Comic;
 import com.thanarat.comicreader.repository.ComicRepository;
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -44,4 +45,28 @@ public class ComicController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
             }
         }
+    @PostMapping
+    public Comic createComic(@RequestBody Comic comic) {
+        return comicRepository.save(comic);
     }
+
+        @PutMapping("/{id}")
+    public ResponseEntity<?> updateComic(@PathVariable Long id, @RequestBody Comic newComicData) {
+            return comicRepository.findById(id)
+                .map(comic -> {
+                    comic.setTitle(newComicData.getTitle()); // แก้ไขชื่อเรื่อง
+                    comic.setAuthor(newComicData.getAuthor()); // แก้ไขชื่อผู้แต่ง
+                    comicRepository.save(comic); // บันทึกทับตัวเดิม
+                    return ResponseEntity.ok("อัปเดตข้อมูลการ์ตูนเรียบร้อย!");
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteComic(@PathVariable Long id) {
+        if (comicRepository.existsById(id)) {
+            comicRepository.deleteById(id);
+            return ResponseEntity.ok("ลบข้อมูลสำเร็จ");
+        }
+        return ResponseEntity.notFound().build();
+    }
+}
